@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="content">
     <h1>Hello, Nuxt3!</h1>
     <ul>
       <li v-for="article in data.contents" :key="article.id">
-        <NuxtLink :to="`/${article.id}`">{{ article.title }}</NuxtLink>
+        <nuxt-link :to="`/${article.id}`">{{ article.title }}</nuxt-link>
       </li>
     </ul>
   </div>
@@ -11,13 +11,11 @@
 
 
 
-
-
 <script setup>
 const { data } = await useFetch("/blog", {
-  baseURL: "https://w3cdp.microcms.io/api/v1",
+  baseURL: "https://koneru-collection.microcms.io/api/v1",
   headers: {
-    "X-MICROCMS-API-KEY": "f9486b96-e72f-4724-99fe-c0a79b91619d",
+    "X-MICROCMS-API-KEY": "a018dfee22ac488b98d4730036ada92571ee",
   },
 });
 </script>
